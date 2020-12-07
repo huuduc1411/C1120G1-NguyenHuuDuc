@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    td, th {
+        border: 1px solid black;
+        padding: 8px;
+    }
+    .B {text-align: center;
+        font-weight: bold;
+    }
+</style>
+<body>
+<form style="background-color: darkgrey; width: 600px;height: 200px" >
+    <table border="solid" style="border-collapse: collapse">
+        <caption>A test table with merged cells</caption>
+        <tr>
+            <th rowspan="2">&nbsp;</th>
+            <th colspan="2"; class="B">Average</th>
+            <th rowspan="2"; class="B">Red eyes</th>
+        </tr>
+        <tr>
+            <td class="B">height</td>
+            <td class="B">weight</td>
+        </tr>
+        <tr>
+            <td class="B">Males</td>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td class="B">Females</td>
+            <td>1.7</td>
+            <td>0.002</td>
+            <td>43%</td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
