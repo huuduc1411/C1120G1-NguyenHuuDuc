@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <label>Amuonunt
+        <input  type="number" name="number" min="0" id="money"/>
+    </label>
+    <label for="go"></label><select id="go">
+    <option value="VNĐ">VNĐ</option>
+    <option value="USD">USD</option>
+</select>
+    <label for="to"></label><select id="to">
+    <option value="USD">USD</option>
+    <option value="VNĐ">VNĐ</option>
+</select>
+    <input type="button" onclick="doiTien()" value="convert"/>
+    <p id="kt"></p>
+</form>
+<script>
+    function doiTien() {
+        let tienNhap= parseInt(document.getElementById("money").value);
+        let cache1= document.getElementById("go").value;
+        let cache2= document.getElementById('to').value;
+        let ketqua=0;
+        if ( cache1==='VNĐ' && cache2==='USD'){
+            ketqua = tienNhap/23000;
+            document.getElementById('kt').innerHTML="Kết quả là: "+ketqua;
+        }
+        else if (cache1==='USD' && cache2==='VNĐ'){
+            ketqua=tienNhap*23000;
+            document.getElementById('kt').innerHTML="Kết quả là: "+ketqua;
+        }
+        else  {
+            document.getElementById("kt").innerHTML="Kết quả là: "+tienNhap;
+        }
+    }
+
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
