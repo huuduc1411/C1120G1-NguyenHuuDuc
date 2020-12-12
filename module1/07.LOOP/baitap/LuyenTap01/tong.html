@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let fibo1=1;
+    let fibo2=1;
+    let fiboN=0;
+    let total = 0;
+    for (let i = 2 ; i < 20 ; i++) {
+        fiboN = fibo1 + fibo2;
+        fibo1 = fibo2;
+        fibo2 = fiboN;
+        total = total + fiboN;
+    }
+    document.write("Tổng 20 số fibo đàu tiên là: " + total);
+</script>
+</body>
+</html>

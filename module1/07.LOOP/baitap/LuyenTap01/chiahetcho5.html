@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let fibo1=1;
+    let fibo2=1;
+    let fiboN=0;
+    while ( fibo1 %5 !== 0 ) {
+        fiboN = fibo1 + fibo2;
+        fibo1 = fibo2;
+        fibo2 = fiboN;
+    }
+    document.write("Số fibo dau tien chia het cho 5 là: " + fibo1);
+</script>
+</body>
+</html>
