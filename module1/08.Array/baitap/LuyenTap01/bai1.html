@@ -2,9 +2,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
-<body>
-$END$
+<body >
+<h1 style="color: red" id="xuatKetQua"></h1>
+<script>
+    let mangNhapVao = new Array();
+    let mangKetQua = new Array();
+    for (let i=0; i<5;i++){
+        mangNhapVao[i] = parseInt(prompt("Nhập số nguyên bất kỳ:"));
+        // mangNhapVao.push(nhapSo);
+
+    }
+    for (let ketQua of mangNhapVao){
+        if (ketQua>=10){
+            mangKetQua.push(ketQua);
+        }
+    }
+    // document.write(mangKetQua)
+    if (mangKetQua.length == 0){
+        document.getElementById("xuatKetQua").innerHTML="Không có số nguyên nào lớn hơn hoặc bằng 10";
+    }
+    else document.getElementById("xuatKetQua").innerHTML="Các số nguyên lớn hơn hoặc bằng 10 là: " + mangKetQua.join(" , ");
+
+</script>
 </body>
 </html>

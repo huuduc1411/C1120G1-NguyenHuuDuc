@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tìm và xóa phần tử</title>
 </head>
 <body>
-$END$
+<script>
+    let numbers = [78, 2, 5, 67, 12, 10, 34, 7, 22, 10];
+    let v = parseInt(prompt("nhập"));
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] === v) {
+
+            for (let j = i; j < numbers.length; j++) {
+                numbers[j] = numbers[j + 1];
+            }
+            numbers.pop();
+        }
+    }
+    alert(numbers);
+</script>
 </body>
 </html>

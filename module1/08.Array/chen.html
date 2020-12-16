@@ -6,10 +6,34 @@
 </head>
 <body>
 <script>
-    // let number = parseInt(prompt("nhâphj"));
-    let a = [12,32,32,14,56,78,35,15,2,78];
-     a.splice(2,0, "000","111");
-    document.write(a)
+    // let number = parseInt(prompt("nhập"));
+    // let viTri = parseInt(prompt("Nhập vị trí"));
+    // let a = [12,32,32,14,56,78,35,15,2,78];
+    //  a.splice(viTri,0, number);
+    // document.write(a)
+    let array = [];
+    let number = parseInt(prompt("nhập số lượng mảng"));
+    let sum = 0;
+    if (number <= 0) {
+        for (let i = 0; ; i++) {
+            number = parseInt(prompt("nhập số lượng mảng"));
+            // array[i] = parseInt(prompt("nhập phần tử thứ " + i));
+        }
+    } else {
+        for (let i = 1; i <= number; i++) {
+            array[i] = prompt("nhập phần tử thứ " + i);
+        }
+    }
+    document.write("Mảng ban đầu "+ array + "<br>");
+    let So = prompt("Nhập số muốn thêm vào mảng");
+    let viTri;
+    do {
+        viTri = parseInt(prompt("tại vị trí thứ: "));
+    } while (viTri <= 0 || viTri >= array.length);
+
+    array.splice(viTri, 0, So);
+    document.write("Mảng sau khi thêm " + " " + array)
+
 </script>
 </body>
 </html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Furama</title>
+</head>
+<body>
+<script>
+    let name = 'Lee Min';
+    let cardId = '1235456';
+    let birthday = '2/9/1992';
+    let email = 'gfhgf@gmail.com';
+    let address = 'Quảng Nam';
+    let typeCustomer = 'Diamond';
+    let discount = 10;
+    let amountPeople = 3;
+    let rentDay = 7;
+    let typeService = 'Villa';
+    let typeRoom = 'Vip';
+    let moneyPay;
+    let exist;
+    function showCusstomer() {
+        alert("1.Tên Khách Hàng : " + name + "\n" +
+            "2.Số Thẻ Căn Cước: " + cardId + "\n" +
+            "3.Ngày Sinh Khách Hàng : " + birthday + "\n" +
+            "4.Email Khách Hàng : " + email + "\n" +
+            "5.Địa Chỉ Khách Hàng : " + address + "\n" +
+            "6.Loại Khách Hàng : " + typeCustomer + "\n" +
+            "7.Giảm Giá (%) : " + discount + "\n" +
+            "8.Số Lượng Người : " + amountPeople + "\n" +
+            "9.Ngày Thuê : " + rentDay + "\n" +
+            "10.Loại Dịch Vụ : " + typeService + "\n" +
+            "11.Loại Phòng : " + typeRoom)
+    }
+    // -------------------------------------------------------------------------
+    function editCustomer() {
+        exist = parseInt(prompt("THÔNG TIN KHÁCH HÀNG®\n" + "\n" +
+            "1.Tên Khách Hàng : " + name + "\n" +
+            "2.Số Thẻ Căn Cước: " + cardId + "\n" +
+            "3.Ngày Sinh Khách Hàng : " + birthday + "\n" +
+            "4.Email Khách Hàng : " + email + "\n" +
+            "5.Địa Chỉ Khách Hàng : " + address + "\n" +
+            "6.Loại Khách Hàng : " + typeCustomer + "\n" +
+            "7.Giảm Giá (%) : " + discount + "\n" +
+            "8.Số Lượng Người : " + amountPeople + "\n" +
+            "9.Ngày Thuê : " + rentDay + "\n" +
+            "10.Loại Dịch Vụ : " + typeService + "\n" +
+            "11.Loại Phòng : " + typeRoom));
+    }
+    // -------------------@@---------------------------
+    function totalMoney(
+    ) {
+        switch (typeService) {
+            case "Villa":
+                moneyPay = 500 * rentDay * (1 - discount / 100);
+                break;
+            case "House":
+                moneyPay = 300 * rentDay * (1 - discount / 100);
+                break;
+            case "Room":
+                moneyPay = 100 * rentDay * (1 - discount / 100);
+                break;
+            default:
+                alert("Failed");
+        }
+        let beforeMoney = moneyPay;
+        switch (typeCustomer) {
+            case "Kim Cương":
+                moneyPay -= 15;
+                break;
+            case "Bạch Kim":
+                moneyPay -= 10;
+                break;
+            case "Vàng":
+                moneyPay -= 5;
+                break;
+            case "Bạc":
+                moneyPay -= 2;
+                break;
+            default:
+                moneyPay -= 0
+        }
+        switch (address) {
+            case "Đà Nẵng":
+                moneyPay -= 20;
+                break;
+            case "Huế":
+                moneyPay -= 10;
+                break;
+            case "Quảng Nam":
+                moneyPay -= 5;
+                break;
+            default:
+                moneyPay -= 0;
+        }
+        if (rentDay > 7) {
+            moneyPay -= 30;
+        } else if (rentDay >= 5) {
+            moneyPay -= 20;
+        } else if (rentDay >= 2) {
+            moneyPay -= 10;
+        } else moneyPay -= 0;
+        let totalMoney = moneyPay;
+        let discountMoney = beforeMoney - totalMoney;
+        alert("Số tiền phải trả là :" + totalMoney + "\n" +
+            "Số tiền giảm giá là : " + discountMoney);
+    }
+    // ------------------------------------------------------------------------------------------
+    let check=true;
+    do {
+        let chose = parseInt(prompt("1. Hiển Thị Thông Tin Khách Hàng" + "\n" +
+            "2.Chỉnh Sửa Thông Tin Khách Hàng" + "\n" +
+            "3.Hiển Thị Số Tiền Phải Trả Sau Khi Chiết Khấu" + "\n"+
+                "4.Thoát ra"
+        ));
+        switch (chose) {
+            case 1:
+                showCusstomer();
+                break;
+            case 2:
+                editCustomer();
+                switch (exist) {
+                    case 1:
+                        name = prompt("Tên Khách Hàng (New) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 2:
+                        cardId = prompt("Số Thẻ Căn Cước (New): ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 3:
+                        birthday = prompt("Ngày Sinh Khách Hàng (New) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 4:
+                        email = prompt("Địa Chỉ Email (New) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 5:
+                        address = prompt("Địa Chỉ Khách Hàng (New) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 6:
+                        typeCustomer = prompt("Loại khách hàng (Kim cương / Bạch kim / Vàng / Bạc / Thành viên): ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 7:
+                        discount = prompt("Giảm Giá (%) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 8:
+                        amountPeople = prompt("Số Lượng Người : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 9:
+                        rentDay = prompt("Số Ngày : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 10:
+                        typeService = prompt("Loại Dịch Vụ (Villa/House/Room) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    case 11:
+                        typeRoom = prompt("Loại Phòng (Vip/Business/Normal) : ");
+                        showCusstomer();
+                        editCustomer();
+                        break;
+                    default:
+                        alert("Failed")
+                }
+                break;
+            case 3:
+                totalMoney();
+                break;
+                case 4:
+                    check=false;
+                    break;
+            default:
+                alert("Failed")
+        }
+    }while (check)
+
+</script>
+</body>
+</html>
