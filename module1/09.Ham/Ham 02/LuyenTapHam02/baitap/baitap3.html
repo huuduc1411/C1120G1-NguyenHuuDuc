@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">bi
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="show()">
+<script>
+    let a = parseInt(prompt("nhập số để tính giai thừa"));
+    let giaiThua = 1;
+    if (a <= 0 || isNaN(a)) {
+        alert("Bạn nhập dữ liệu sai")
+    } else function show() {
+        for (let i = 1; i <= a; i++) {
+            giaiThua = giaiThua * i
+        }
+        alert("Giai thừa của " + a + " là " + giaiThua) ;
+    }
+
+
+</script>
+</body>
+</html>

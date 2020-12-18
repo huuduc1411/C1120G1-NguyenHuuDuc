@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let mail;
+    check=false;
+    do {
+        email = prompt('Input email');
+        var reg = /^\w+@[a-zA-Z]{3,}\.com$/i;
+        console.log(reg.test(email));
+        if (reg.test(email) == true) {
+            check = true;
+        } else {
+            alert("kh hợp lệ");
+        }
+    }while (!check);
+    check=false;
+</script>
+</body>
+</html>

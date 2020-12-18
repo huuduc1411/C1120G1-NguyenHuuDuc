@@ -33,7 +33,7 @@
             "11.Loại Phòng : " + typeRoom)
     }
     // -------------------------------------------------------------------------
-    function editCustomer() {
+    function editCustomer(){
         exist = parseInt(prompt("THÔNG TIN KHÁCH HÀNG®\n" + "\n" +
             "1.Tên Khách Hàng : " + name + "\n" +
             "2.Số Thẻ Căn Cước: " + cardId + "\n" +
@@ -52,7 +52,7 @@
     ) {
         switch (typeService) {
             case "Villa":
-                moneyPay = 500 * rentDay * (1 - discount / 100);
+                moneyPay = 500 * rentDay * ( discount / 100);
                 break;
             case "House":
                 moneyPay = 300 * rentDay * (1 - discount / 100);
@@ -123,57 +123,57 @@
                     case 1:
                         name = prompt("Tên Khách Hàng (New) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 2:
                         cardId = prompt("Số Thẻ Căn Cước (New): ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 3:
                         birthday = prompt("Ngày Sinh Khách Hàng (New) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 4:
                         email = prompt("Địa Chỉ Email (New) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 5:
                         address = prompt("Địa Chỉ Khách Hàng (New) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 6:
                         typeCustomer = prompt("Loại khách hàng (Kim cương / Bạch kim / Vàng / Bạc / Thành viên): ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 7:
                         discount = prompt("Giảm Giá (%) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 8:
                         amountPeople = prompt("Số Lượng Người : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 9:
                         rentDay = prompt("Số Ngày : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 10:
                         typeService = prompt("Loại Dịch Vụ (Villa/House/Room) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     case 11:
                         typeRoom = prompt("Loại Phòng (Vip/Business/Normal) : ");
                         showCusstomer();
-                        editCustomer();
+                        // editCustomer();
                         break;
                     default:
                         alert("Failed")
