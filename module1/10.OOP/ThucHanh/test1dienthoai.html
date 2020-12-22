@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý sản phẩm</title>
+</head>
+<body>
+<input type="text" id="nhap" placeholder="Tên Sản Phẩm"> <input type="button" onclick="themMoi()" value="Thêm Sản Phẩm">
+<p>So luong</p><span id="soLuong"></span>
+<p id="ketQua"></p>
+<script>
+    let danhSachSP = ["Nokia", "SamSung", "Iphone", "LG"];
+    hienThi();
+
+    // hàm hiện thị sản phẩm
+    function hienThi() {
+        let bangChuoi = '<table border="4" style="width: 50%";  >\n' +
+            '    <tr>\n' +
+            '        <th>Stt</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '    </tr>';
+        for (let i = 0; i < danhSachSP.length; i++) {
+            bangChuoi += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + danhSachSP[i] + '</td>\n' +
+                '        <td><input type="button" value="Sửa" onclick="suaTen(' + i + ')"></td>\n' +
+                '        <td><input type="button" value="Xóa" onclick="xoaSanPham(' + i + ')"></td>\n' +
+                '\n' +
+                '    </tr>'
+        }
+        bangChuoi += '</table>';
+        // danhSachSP +='</table>';
+        document.getElementById("ketQua").innerHTML = bangChuoi;
+        document.getElementById("soLuong").innerHTML = danhSachSP.length;
+    }
+
+    // hàm xoa sản phẩm
+    function xoaSanPham(id) {
+        let xacNhanXoa = confirm(" Bạn Có Muốn Xóa Sản Phẩm" + danhSachSP[id]);
+        if (xacNhanXoa) {
+            danhSachSP.splice(id, 1);
+        }
+        // sau khi xóa phải hiện thị lại
+        hienThi();
+
+    }
+
+    // hàm sửa tên sản phẩm
+    function suaTen(id) {
+        let tenSPMoi = prompt("Nhập Tên Sản Phẩm Mới");
+        if (tenSPMoi != "" && tenSPMoi != null) {
+            danhSachSP[id] = tenSPMoi
+        } else {
+            alert(" Hãy Nhập Tên Sản Phẩm")
+        }
+        hienThi();
+    }
+
+    // hàm thêm mới sản phẩm
+    function themMoi() {
+        let tenSP = document.getElementById("nhap").value;
+        if (tenSP != "") {
+            danhSachSP.push(tenSP);
+        } else {
+            alert(" Hãy Nhập Tên Sản Phẩm")
+        }
+        document.getElementById("nhap").value = "";
+        hienThi();
+    }
+</script>
+</body>
+</html>
