@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let name;
+    let cmnd;
+    let birthday;
+    let email;
+    let address;
+    let typecustomer;
+    let quantilyincluded;
+    let voucher;
+    let rentDays;
+    let typeservice;
+    let kindroom;
+    let check =false;
+    let tempName="";
+    //---------------------------------------------------------------------
+    // function formatString(uncutString) {
+    //     name =  prompt('Vui Lòng Nhập Tên');
+    //     let name = uncutString.trim();
+    //     let a = [];
+    //     let b = [];
+    //     for (let i = 0; i < trimString.length; i++) {
+    //         b[i] = trimString[i];
+    //     }
+    //     for (let i = 0; i < b.length; i++) {
+    //         if ((b[i] === " ") && (b[i+1] === " ")) {
+    //             b.splice((i),1);
+    //             i--;
+    //         }
+    //         a[i] = b[i];
+    //     }
+    //     for (let i = 0; i < a.length; i++) {
+    //         a[i] = a[i].toLowerCase();
+    //     }
+    //     for (let i = 0; i < a.length; i++) {
+    //         a[0] = a[0].toUpperCase();
+    //         if (a[i] === " ") {
+    //             a[i+1] = a[i+1].toUpperCase();
+    //         }
+    //     }
+    //     return a.join("");
+    // }
+
+
+    name =  prompt('Vui Lòng Nhập Tên');
+    name=name.trim().toLowerCase();
+    for (let i=0;i<name.length;i++) {
+        if (name.charAt(i)===" " && name.charAt(i+1)===" ") {
+
+
+            continue;
+        }
+        if (i===0 ||name.charAt(i-1)===" ") {
+            tempName+=name.charAt(i).toUpperCase();
+            continue;
+        }
+        tempName+=name.charAt(i);
+    }
+    name=tempName;
+    do {
+        cmnd = prompt('Vui Lòng  Nhập Số CMND của Bạn');
+        if (!isNaN(cmnd)) {
+            cmnd=Number.parseFloat(cmnd);
+        }
+        if (!Number.isInteger(cmnd)) {
+            //Phương thức Number.isInteger () xác định xem một giá trị có phải là số nguyên hay không.
+            //nếu đúng trả về true, còn kh thì fals
+
+            alert('Số Chứng Minh bạn nhập không đúng');
+            continue;
+        }
+        if (cmnd<10000000||cmnd>99000000) {
+            alert('Số Chứng Minh bạn nhập không đúng');
+            continue;
+        }
+        check=true
+    } while (!check);
+    check=false;
+    do {
+        birthday = prompt('Vui Lòng Ngày Tháng Năm Sinh');
+        //Phương thức substr () trích xuất các phần của một chuỗi, bắt đầu từ ký tự ở vị trí được chỉ định và trả về số ký tự được chỉ định.
+        let day= birthday.substr(0,2);
+        let month= birthday.substr(3,2);
+        let year =birthday.substr(6,4);
+        if (birthday.length===10 && birthday.charAt(2)==="/" && birthday.charAt(5)==="/" &&
+            day > 0 && day < 31 && month > 0 && month <= 12 && year > 1900 && year<2002) {
+            check=true;
+        } else {
+            alert('Nhập lại đi');
+            // check=false
+        }
+    } while (!check);
+    check=false;
+    //------------------------------------------------------------------------------//
+    //
+    do  {
+    //     email = prompt('Input email');
+    //     let array = email.split("");
+    //     let count=0;
+    //     let value=0;
+    //     for (let i = 0; i <array.length ; i++) {
+    //         if (array[i]==="@"){
+    //             count++;
+    //         }
+    //         if (array[i]==="."){
+    //             value++;
+    //         }
+    //     }
+    //     if (count!==1||value<1||array[array.length-1]==="."||array[0]==="."){
+    //
+    //     }else{
+    //         check=true;
+    //     }
+
+        let reg = /^\w+@[a-zA-Z]{3,}\.com$/i;
+        console.log(reg.test(email));
+        if (reg.test(email) === true){
+            check = true ;
+        }else {
+            alert("kh hợp lệ");
+
+        // if (!check){
+        //     alert("Email invalid")
+    }
+        //     for (let i=0;i<email.length;i++) {
+        //         if (email.charAt(i)==="@") {
+        //             countAt++;
+        //             for (let j=i+1;j<email.length;j++) {
+        //                 if (email.charAt(j)===".") {
+        //                     countDoc++;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     if (countAt!==1||countDoc<1) {
+        //         alert("email bạn nhập không hợp lệ")
+        //     } else {
+        //         check=true;
+        //     }
+        // }
+
+    }
+    while (!check);
+    //--------------------------------------------------------------//
+
+
+    address = prompt('Address :');
+    typecustomer = prompt('Customer Type : ');
+    quantilyincluded = prompt('QuantilyIncluded :');
+    voucher = prompt('Voucher');
+    rentDays = prompt('rentDays:');
+    typeservice = prompt('Type of service :');
+    kindroom = prompt('Kind of room :');
+
+
+    displayMainMenu();
+    function displayMainMenu() {
+        let choose = prompt("Enter the number below:\n 1. Add New Customer\n 2. Display Information Customer" +
+            "\n 3. Edit Information Customer\n 4. Delete Customer\n 5. Exit");
+        switch (choose) {
+            case "1":
+                return addNewCustomer();
+                break;
+            case "2":
+                if (listCustomers.length>0){
+                    return displayCustomer(listCustomers);
+                }else {
+                    alert("Ngộ??? Có gì đâu mà hiển thị!");
+                    displayMainMenu();
+                }
+                break;
+            case "3":
+                if (listCustomers.length>0){
+                    return editInformationCustomer(listCustomers,thongTinCanNhap);
+                }else {
+                    alert("Ngộ??? Có gì đâu mà sửa !");
+                    displayMainMenu();
+                }
+                break;
+            case "4":
+                if (listCustomers.length>0){
+                    return  deleteCustomer(listCustomers);
+                }else {
+                    alert("Ngộ??? Có gì đâu mà xóa !");
+                    displayMainMenu();
+                }
+                break;
+            case "5":
+                break;
+            default:
+                alert("Please, try again!");
+                displayMainMenu();
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

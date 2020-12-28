@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkBirthDay() {
+        check = false;
+        do {
+            birthday = prompt('Vui Lòng Ngày Tháng Năm Sinh');
+            let day = birthday.substr(0, 2);
+            let month = birthday.substr(3, 2);
+            let year = birthday.substr(6, 4);
+            if (birthday.length === 10 && birthday.charAt(2) === "/" && birthday.charAt(5) === "/" &&
+                0 < day < 31 && 0 < month < 12 && 1900 < year < 2002) {
+                check = true;
+            } else {
+                alert('Nhập lại đi');
+                check = false
+            }
+        } while (!check);
+        check = false;
+    }
+    checkBirthDay()
+</script>
+</body>
+</html>

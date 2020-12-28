@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let flag = true;
+    let arrListCustomers = [];
+    menu();
+    function menu(){
+
+        do {
+        let menuList = prompt("1. Tên Khách Hàng \n 2. Xóa Khách Hàng \n 3. Hiển Thi Thông Tin Khách Hàng\n" +
+            " 4. Sử Thông Tin \n 5.Thoát");
+        switch (menuList) {
+            case "1":
+                addNameCus();
+
+                break;
+            case "2":
+                delCus();
+                break;
+            case "3":
+                showInfor();
+                break;
+            case "4":
+                editInfor();
+            case "5":
+               flag = false;
+                break;
+            // alert("Cancel");
+            // menu();
+            }
+        } while (flag)
+    }
+    function addNameCus() {
+        let numCustomer = prompt("Nhập Số Lượng Khách Hàng:");
+        for (let i = 0; i < numCustomer; i++) {
+            arrListCustomers[i] = {
+                name: prompt("Nhập Name:"),
+                address: prompt("Nhập Địa Chỉ:"),
+                id: prompt("Nhập Số Chứng Minh Thư: "),
+                birth: prompt("Nhập Ngày Sinh: "),
+                email: prompt("Nhập Email: "),
+                quantityIncluded: prompt("Nhập Số Lượng Bao Gồm: "),
+                rentDay: prompt("Nhập Ngày Thuê: "),
+
+            };
+        }
+        showInfor();
+    }
+    function delCus(){
+        let text = "" ;
+        for(let i = 0; i< arrListCustomers.length;i++){
+            text += (i+1) + " " +arrListCustomers[i].name +"  ";
+        }
+        let choose =prompt("Nhập Số Lượng Khánh Hàng Bạn Muốn Xóa:\n"+text);
+        arrListCustomers.splice(choose-1,1);
+        showInfor();
+    }
+    function showInfor() {
+        arrListCustomers.sort(function (a,b) {
+            let nameA = a.name.toUpperCase();
+            let nameB = b.name.toUpperCase();
+            if(nameA > nameB){
+                return -1;
+            }
+            if(nameB > nameA){
+                return 1;
+            }
+            return 0;
+
+        });
+        for(let i = 0; i < arrListCustomers.length;i++){
+            alert("Thông Tin Khánh Hàng: \n"+
+                "1. Tên: "+ [i].name + "\n" +
+                "2. Địa Chỉ: "+arrListCustomers[i].address+"\n"+
+                "3. Chứng Minh Thư: "+ arrListCustomers[i].id +"\n"+
+                "4. Sinh Nhật: "+ arrListCustomers[i].birth +"\n"+
+                "5. Email: "+ arrListCustomers[i].email +"\n"+
+                "6. Số Lượng Bao Gồm: "+ arrListCustomers[i].quantityIncluded +"\n"+
+                "7. Ngày Thuê: "+ arrListCustomers[i].rentDay +"\n"
+            )
+        }
+        menu();
+    }
+    function editInfor() {
+        let text = "" ;
+        for(let i = 0; i< arrListCustomers.length;i++){
+            text += (i+1) + " " +arrListCustomers[i].name +"  ";
+        }
+        let chooseNum =prompt("Nhập Số Lượng Khánh Hàng Bạn Muốn Xóa:\n"+text);
+        let chooseType = prompt("Thông Tin Khánh Hàng: \n"+
+            "1. Tên: "+ arrListCustomers[chooseNum-1].name + "\n" +
+            "2. Địa Chỉ: "+arrListCustomers[chooseNum-1].address+"\n"+
+            "3. Chứng Minh Thư: "+ arrListCustomers[chooseNum-1].id +"\n"+
+            "4. Sinh Nhật: "+ arrListCustomers[chooseNum-1].birth +"\n"+
+            "5. Email: "+ arrListCustomers[chooseNum-1].email +"\n"+
+            "6. Số Lượng Bao Gồm: "+ arrListCustomers[chooseNum-1].quantityIncluded +"\n"+
+            "7. Ngày Thuê: "+ arrListCustomers[chooseNum-1].rentDay +"\n");
+        switch(chooseType){
+            case "1" : arrListCustomers[chooseNum-1].name = prompt("Nhập Tên Đầy Đủ: ");
+                break;
+            case "2": arrListCustomers[chooseNum-1].address = prompt("Nhập Đia Chỉ ");
+                break;
+            case "3" : arrListCustomers[chooseNum-1].id  = prompt("Nhập Chứng Minh Thư: ");
+                break;
+            case "4" : arrListCustomers[chooseNum-1].birth = prompt("Nhập Ngày Sinh: ");
+                break;
+            case "5": arrListCustomers[chooseNum-1].email = prompt("Nhập Ngày Sinh: ");
+                break;
+            case "6": arrListCustomers[chooseNum-1].quantityIncluded = prompt("Nhập Số Lượng: ");
+                break;
+            case "7" : arrListCustomers[chooseNum-1].rentDay = prompt("Nhập Số Ngày Thuê: ");
+        }
+        menu();
+    }
+</script>
+</body>
+</html>

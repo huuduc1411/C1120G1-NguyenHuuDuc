@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let thongTinCanNhap = ["Tên", "CMND", "Ngày , tháng , năm sinh", "Email", "Địa chỉ", "Loại Customer", "Phần trăm giảm giá", "Số lượng đi kèm",
+        "Số ngày thuê", "Loại dịch vụ", "Loại phòng"];
+
+    let listCustomers = new Array();
+    let j = 0;
+    let info;
+
+
+    displayMainMenu();
+
+    function displayMainMenu() {
+        let choose = prompt("Chọn Thông Tin Bạn Cần Truy Cập:\n 1. Tên Khánh Hàng Mới\n 2. Hiển Thị Thông Tin Khách Hàng" +
+            "\n 3. Chỉnh Sửa Thông Tin Khách Hàng\n 4. Xóa Khách Hàng\n 5. Thoát");
+        switch (choose) {
+            case "1":
+                return addNewCustomer();
+                break;
+            case "2":
+                if (listCustomers.length > 0) {
+                    return displayCustomer(listCustomers);
+                } else {
+                    alert("Ngộ??? Có gì đâu mà hiển thị!");
+                    displayMainMenu();
+                }
+                break;
+            case "3":
+                if (listCustomers.length > 0) {
+                    return editInformationCustomer(listCustomers, thongTinCanNhap);
+                } else {
+                    alert("Ngộ??? Có gì đâu mà sửa !");
+                    displayMainMenu();
+                }
+                break;
+            case "4":
+                if (listCustomers.length > 0) {
+                    return deleteCustomer(listCustomers);
+                } else {
+                    alert("Ngộ??? Có gì đâu mà xóa !");
+                    displayMainMenu();
+                }
+                break;
+            case "5":
+                break;
+            default:
+                alert("Please, try again!");
+                displayMainMenu();
+        }
+    }
+</script>
+</body>
+</html>
