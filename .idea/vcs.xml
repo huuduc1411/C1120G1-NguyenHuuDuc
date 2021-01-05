@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu/module1/01.NhapMonLapTrinh/Bai_Tap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/C1020G1-NguyenHuuDuc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/gitProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/my_new_project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/module1/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/wf-hello" vcs="Git" />
+  </component>
+</project>

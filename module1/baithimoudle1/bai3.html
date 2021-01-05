@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soNguyen() {
+        let check = false;
+        let array = [9,8,7,6,5,4,3,2,1];
+        let newArr = [];
+        for (let i = 0; i < array.length; i++) {
+            if (isPrimeNumber(array[i])) {
+                newArr.push(array[i]);
+            }
+        }
+        newArr.sort(function (a, b) {
+            return (a - b)
+        });
+        document.write( "Số Đầu vào :" + array + " " + " " + "Kết Quả :" + " " + newArr);
+
+
+        function isPrimeNumber(numberCheck) {
+            let count = 0;
+            for (let i = 1; i <= numberCheck; i++) {
+                if (numberCheck % i === 0) {
+                    count++;
+                }
+            }
+            if (count === 2) {
+                return true;
+            }
+            return false;
+        }
+    }
+    soNguyen()
+</script>
+</body>
+</html>

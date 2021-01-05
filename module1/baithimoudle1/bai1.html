@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    let number = parseInt(prompt("nhập số lượng mảng"));
+    let sum = 0;
+    if (number <= 0) {
+        for (let i = 0; ; i++) {
+            number = parseInt(prompt("nhập số lượng mảng"));
+        }
+    } else {
+        for (let i = 1; i <= number; i++) {
+            array[i] = prompt("nhập phần tử thứ " + i);
+        }
+    }
+    document.write("Mảng ban đầu "+ array + "<br>");
+</script>
+</body>
+</html>

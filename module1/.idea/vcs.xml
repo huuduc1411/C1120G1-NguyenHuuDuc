@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu/module1/01.NhapMonLapTrinh/Bai_Tap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/C1020G1-NguyenHuuDuc" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/gitProject" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/my_new_project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/baicu/module1/01.NhapMonLapTrinh/Bai_Tap/wf-hello" vcs="Git" />
   </component>
 </project>

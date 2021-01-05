@@ -12,7 +12,7 @@
     function menu(){
 
         do {
-        let menuList = prompt("1. Tên Khách Hàng \n 2. Xóa Khách Hàng \n 3. Hiển Thi Thông Tin Khách Hàng\n" +
+        let menuList = prompt("1. Thêm Khách Hàng \n 2. Xóa Khách Hàng \n 3. Hiển Thi Thông Tin Khách Hàng\n" +
             " 4. Sử Thông Tin \n 5.Thoát");
         switch (menuList) {
             case "1":
@@ -39,7 +39,7 @@
         let numCustomer = prompt("Nhập Số Lượng Khách Hàng:");
         for (let i = 0; i < numCustomer; i++) {
             arrListCustomers[i] = {
-                name: prompt("Nhập Name:"),
+                name: prompt("Nhập Tên:"),
                 address: prompt("Nhập Địa Chỉ:"),
                 id: prompt("Nhập Số Chứng Minh Thư: "),
                 birth: prompt("Nhập Ngày Sinh: "),

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Produce {
+        constructor(codeProduce, nameProduce, whereProduction, price) {
+            this.codeProduce = codeProduce;
+            this.nameProduce = nameProduce;
+            this.whereProduction = whereProduction;
+            this.price = price;
+        }
+        getCodeProduce(){
+            return this.codeProduce;
+        }
+        setCodeProduce(codeProduce){
+            this.codeProduce = codeProduce;
+        }
+        getNameProduce(){
+            return this.nameProduce;
+        }
+        setNameProduce(nameProduce){
+            this.nameProduce = nameProduce;
+        }
+        getWhereProduction(){
+            return this.whereProduction;
+        }
+        setWhereProduction(whereProduction){
+            this.whereProduction = whereProduction;
+        }
+        getPrice(){
+            return this.price;
+        }
+        setPrice(price){
+            this.price = price;
+        }
+        toString(){
+            document.write("Information of produce:" + "<br>" +
+                "1. Code of produce: " + this.getCodeProduce() + "<br>"+
+                "2. Name of produce: " + this.getNameProduce() + "<br>"+
+                "3. Where production: " + this.getWhereProduction() + "<br>"+
+                "4. Price :" + this.getPrice());
+        }
+    }
+    let pro = new Produce("a1234","Bear","LG",20000);
+    console.log(pro.toString());
+</script>
+</body>
+</html>
