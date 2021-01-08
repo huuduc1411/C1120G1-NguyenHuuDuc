@@ -5,5 +5,6 @@ public class TestCircle {
         Circle circle = new Circle();
         System.out.println("bán kính "+ circle.getRarius());
         System.out.println("diện tích " + circle.getArea());
+
     }
 }
