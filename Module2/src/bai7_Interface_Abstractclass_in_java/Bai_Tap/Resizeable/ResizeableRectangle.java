@@ -1,4 +1,4 @@
-package bai7_Interface_Abstractclass_in_java.Thuc_Hanh.Resizeable;
+package bai7_Interface_Abstractclass_in_java.Bai_Tap.Resizeable;
 
 import bai6_Inheritance_In_Java.Thuc_Hanh.Rectangle;
 

@@ -1,4 +1,4 @@
-package bai7_Interface_Abstractclass_in_java.Thuc_Hanh.Resizeable;
+package bai7_Interface_Abstractclass_in_java.Bai_Tap.Resizeable;
 
 import bai6_Inheritance_In_Java.Thuc_Hanh.Shape;
 
@@ -24,6 +24,9 @@ public class Test {
                 System.out.println("Old Length : "+((ResizeableRectangle) shape).getLength());
                 System.out.println("Old Width : "+((ResizeableRectangle) shape).getWidth());
                 System.out.println("Old area : "+((ResizeableRectangle) shape).getArea());
+                ResizeableRectangle resizeableRectangle = new ResizeableRectangle();
+
+
 
             } else if (shape instanceof ResizeableSquare){
                 System.out.println("Old size : "+((ResizeableSquare) shape).getSide());
@@ -43,7 +46,7 @@ public class Test {
                 System.out.println("New area : "+((ResizeableRectangle) shape).getArea());
 
             } else if (shape instanceof ResizeableSquare){
-                ((ResizeableSquare) shape).resize(percent);
+                ((ResizeableSquare)shape).resize(percent);
                 System.out.println("New size : "+((ResizeableSquare) shape).getSide());
                 System.out.println("New area : "+((ResizeableSquare) shape).getArea());
 
