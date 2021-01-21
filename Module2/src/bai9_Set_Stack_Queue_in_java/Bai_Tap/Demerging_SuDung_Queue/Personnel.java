@@ -1,11 +1,11 @@
 package bai9_Set_Stack_Queue_in_java.Bai_Tap.Demerging_SuDung_Queue;
 
-public class Personnel {
+public class Personnel implements Comparable <Personnel> {
     private String name;
-    private boolean Gender;
+    private String Gender;
     private String birthDay;
 
-    public Personnel(String name, boolean gender, String birthDay) {
+    public Personnel(String name, String gender, String birthDay) {
         this.name = name;
         Gender = gender;
         this.birthDay = birthDay;
@@ -19,11 +19,11 @@ public class Personnel {
         this.name = name;
     }
 
-    public boolean isGender() {
+    public String getGender() {
         return Gender;
     }
 
-    public void setGender(boolean gender) {
+    public void setGender(String gender) {
         Gender = gender;
     }
 
@@ -39,8 +39,14 @@ public class Personnel {
     public String toString() {
         return "Personnel{" +
                 "name='" + name + '\'' +
-                ", Gender=" + Gender +
+                ", Gender='" + Gender + '\'' +
                 ", birthDay='" + birthDay + '\'' +
                 '}';
+    }
+
+
+    @Override
+    public int compareTo(Personnel o) {
+        return 0;
     }
 }
