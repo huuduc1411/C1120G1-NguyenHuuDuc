@@ -1,11 +1,10 @@
 package bai12_Thuat_toan_sap_xep_in_java.Thuc_Hanh;
-
-import com.sun.javafx.iio.gif.GIFImageLoaderFactory;
-
 import java.util.Scanner;
-import java.util.function.DoubleToIntFunction;
-
 public class BubbleSortByStep {
+
+
+// bài thực hành
+
     public static void noiBot(int[] list){
         boolean neddNextPass = true;
         for (int i = 1; i < list.length && neddNextPass ; i++) {
@@ -30,7 +29,7 @@ public class BubbleSortByStep {
             System.out.println();
         }
     }
-
+//-----------------------------------------------------------------------
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập độ dài mảng");
@@ -43,8 +42,36 @@ public class BubbleSortByStep {
         System.out.println("Mảng của bạn");
         for (int i = 0; i < list.length ; i++) {
             System.out.println(list[i]+ "\t");
+        }
+        System.out.println("sau khi sắp xếp");
+        noiBot(list);
+        //--------------------------------------------------------------------
+//        System.out.println("Mảng ban đầu");
+//        for (int i = 0; i < list.length ; i++) {
+//            System.out.println(list[i] + "\t");
+//        }
+//        System.out.println("Mảng sau khi sx");
+//-----------------------------------------------------------
+    }
+    public static void bubbleSort(int[] arr){
+        int n = arr.length;
+        for (int i = 0; i < n - 1 ; i++) {
+            for (int j = 0; j < n-i -1 ; j++) {
+                if (arr[j] > arr[j +1]){
+                    int temp = arr[j];
+                    arr[j] = arr[j+1];
+                    arr[j +1] = temp;
+                }
+            }
 
         }
-        noiBot(list);
     }
+    // In các phần tử của arr
+    void printArray(int arr[]) {
+        int n = arr.length;
+        for (int i = 0; i < n; ++i)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
+    //----------------------------------------------------------------
 }

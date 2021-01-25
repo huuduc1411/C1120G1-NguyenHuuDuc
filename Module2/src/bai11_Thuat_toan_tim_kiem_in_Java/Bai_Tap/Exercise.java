@@ -17,9 +17,9 @@ public class Exercise {
         for (int i = 0; i <string.length() ; i++) {
             LinkedList<Character> list = new LinkedList<>();
             list.add(string.charAt(i));
-            for (int j = 0; j < string.length() ; j++) {
+            for (int j = i +1; j < string.length() ; j++) {
                 if (string.charAt(j) > list.getLast()){
-                    list.add(string.charAt(i));
+                    list.add(string.charAt(j));
                 }
             }
             if (list.size()>max.size()){
@@ -29,7 +29,7 @@ public class Exercise {
             list.clear();
         }
         for (Character ch : max) {
-            System.out.println(ch);
+            System.out.print(ch);
         }
 
 
